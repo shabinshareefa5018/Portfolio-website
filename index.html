@@ -1,71 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shabin Shareefa | DevOps Engineer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shabin Shareefa — DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700&display=swap" rel="stylesheet"/>
 
 <style>
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0a0f1e;
-  color: #e8f0fe;
+  margin:0;
+  font-family: 'Inter', sans-serif;
+  background:#0a0f1e;
+  color:#e8f0fe;
 }
 
 /* NAV */
 nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: #111827;
+  position:fixed;
+  width:100%;
+  background:#111827;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 40px;
+  z-index:100;
 }
-nav a {
-  color: #00e5ff;
-  text-decoration: none;
-  margin-left: 20px;
-}
+nav a { color:#00e5ff; text-decoration:none; margin-left:20px; }
 
 /* HERO */
 .hero {
-  padding: 80px 40px;
+  padding:120px 40px 60px;
 }
 .hero h1 {
-  font-size: 48px;
+  font-size:48px;
 }
-.hero span {
-  color: #00e5ff;
+.hero span { color:#00e5ff; }
+
+.btn {
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  background:#00e5ff;
+  color:#000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:5px;
 }
 
 /* SECTION */
-section {
-  padding: 60px 40px;
-}
+section { padding:60px 40px; max-width:1000px; margin:auto; }
 
-/* CARDS */
+/* CARD */
 .card {
-  background: #141d2e;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  transition: 0.3s;
+  background:#141d2e;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  transition:0.3s;
 }
 .card:hover {
-  transform: translateY(-5px);
-  border: 1px solid #00e5ff;
+  transform:translateY(-5px);
+  border:1px solid #00e5ff;
 }
 
 /* PROJECT */
 .project a {
-  color: #00e5ff;
-  text-decoration: none;
+  color:#00e5ff;
+  text-decoration:none;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
+  text-align:center;
+  padding:20px;
+  background:#111;
 }
 </style>
 </head>
@@ -81,50 +89,62 @@ footer {
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Hi, I'm <span>Shabin Shareefa</span></h1>
-  <p>Cloud & DevOps Engineer | AWS | CI/CD | Docker</p>
+  <p>
+    DevOps Engineer fresher specializing in AWS infrastructure, CI/CD pipelines, 
+    and cloud automation.
+  </p>
+
+  <a href="resume.pdf" class="btn">Download Resume</a>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
   <h2>About Me</h2>
   <div class="card">
     <p>
-      DevOps fresher with hands-on experience in AWS, Linux, Docker, and Jenkins.
-      Built real-world CI/CD pipelines and cloud infrastructure projects.
+      I am a Cloud & DevOps Engineer fresher from Calicut with hands-on experience in AWS, Linux, Docker, and Jenkins.
+      I have built real-world projects including CI/CD pipelines and scalable cloud infrastructure.
     </p>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <h2>Projects</h2>
 
   <div class="card project">
-    <h3>CI/CD Pipeline</h3>
-    <p>Automated deployment using Jenkins & Docker</p>
+    <h3>CI/CD Pipeline (Jenkins + Docker)</h3>
+    <p>Automated build and deployment using Jenkins and Docker on AWS EC2.</p>
     <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project →</a>
   </div>
 
   <div class="card project">
-    <h3>AWS DevOps Project</h3>
-    <p>Infrastructure with EC2, VPC, RDS</p>
+    <h3>AWS Cloud Infrastructure</h3>
+    <p>Built high availability architecture with VPC, EC2, Load Balancer, and Auto Scaling.</p>
     <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project →</a>
   </div>
 
   <div class="card project">
-    <h3>Serverless App</h3>
-    <p>Lambda, API Gateway, DynamoDB</p>
+    <h3>Serverless Quiz Application</h3>
+    <p>Built serverless app using Lambda, API Gateway, and DynamoDB.</p>
     <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">View Project →</a>
   </div>
 
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="card">
-    <p>Email: your@email.com</p>
+    <p>Email: shabinshareefa5018@gmail.com</p>
     <p>
-      GitHub: <a href="https://github.com/shabinshareefa5018">shabinshareefa5018</a>
+      GitHub: 
+      <a href="https://github.com/shabinshareefa5018">
+        github.com/shabinshareefa5018
+      </a>
     </p>
   </div>
 </section>
