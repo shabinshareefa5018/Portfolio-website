@@ -1,92 +1,118 @@
-<section id="projects">
-  <div class="reveal">
-    <div class="section-label">Projects</div>
-    <h2>Featured Work</h2>
-    <div class="divider"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Shabin Shareefa — Cloud & DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --bg:#0a0f1e; --card:#141d2e; --accent:#00e5ff; --text:#e8f0fe; --muted:#6b7a99;
+}
+body {margin:0;background:var(--bg);color:var(--text);font-family:Inter;}
+nav {position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:#111;}
+nav a {color:var(--accent);margin-left:15px;text-decoration:none;}
+section {padding:80px 40px;max-width:1000px;margin:auto;}
+.hero {padding-top:120px;}
+.btn {padding:10px 20px;background:var(--accent);color:#000;text-decoration:none;border-radius:5px;margin-right:10px;}
+.card {background:var(--card);padding:20px;border-radius:10px;margin-bottom:20px;}
+.card:hover {border:1px solid var(--accent);}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div><b>Shabin</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <div class="projects-grid">
+<!-- HERO -->
+<section class="hero">
+  <h1>Hi, I'm <span style="color:#00e5ff;">Shabin Shareefa</span></h1>
 
-    <!-- PROJECT 1 -->
-    <div class="project-card reveal">
-      <div class="project-num">01 / FEATURED</div>
-      <div class="project-title">CI/CD Pipeline — Jenkins + Docker + AWS</div>
-      
-      <p class="project-desc">
-        Designed and implemented a complete CI/CD pipeline on RHEL using Jenkins. 
-        Automated build, containerization, and deployment processes using Docker. 
-        Integrated GitHub webhooks to trigger pipelines automatically on code changes, 
-        reducing manual deployment effort and improving delivery speed.
-      </p>
+  <p>
+    Cloud & DevOps Engineer fresher specializing in AWS infrastructure, 
+    CI/CD automation, and scalable system design.
+  </p>
 
-      <div class="project-stack">
-        <span class="stack-chip">Jenkins</span>
-        <span class="stack-chip">Docker</span>
-        <span class="stack-chip">AWS EC2</span>
-        <span class="stack-chip">GitHub</span>
-        <span class="stack-chip">RHEL</span>
-      </div>
+  <a href="resume.pdf" class="btn">Download Resume</a>
+  <a href="https://linkedin.com/in/shabinshareefa" class="btn">LinkedIn</a>
+</section>
 
-      <p style="font-size:0.75rem;color:#39ff8a;">✔ Automated Deployment Pipeline</p>
-
-      <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project" target="_blank" class="project-link">
-        View on GitHub
-      </a>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project-card reveal">
-      <div class="project-num">02 / FEATURED</div>
-      <div class="project-title">AWS Cloud Infrastructure — High Availability Architecture</div>
-
-      <p class="project-desc">
-        Built a production-style AWS infrastructure with VPC, public/private subnets, 
-        Application Load Balancer, and Auto Scaling Groups. Configured CloudWatch 
-        monitoring and SNS alerts for system health. Implemented Lambda-based 
-        auto-healing to ensure high availability and fault tolerance.
-      </p>
-
-      <div class="project-stack">
-        <span class="stack-chip">AWS VPC</span>
-        <span class="stack-chip">EC2</span>
-        <span class="stack-chip">ALB</span>
-        <span class="stack-chip">Auto Scaling</span>
-        <span class="stack-chip">CloudWatch</span>
-        <span class="stack-chip">Lambda</span>
-      </div>
-
-      <p style="font-size:0.75rem;color:#39ff8a;">✔ High Availability & Auto-Healing</p>
-
-      <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project" target="_blank" class="project-link">
-        View on GitHub
-      </a>
-    </div>
-
-    <!-- PROJECT 3 -->
-    <div class="project-card reveal">
-      <div class="project-num">03 / FEATURED</div>
-      <div class="project-title">AWS Serverless Quiz Application</div>
-
-      <p class="project-desc">
-        Developed a serverless web application using AWS Lambda, API Gateway, 
-        and DynamoDB. Hosted frontend on EC2 with Nginx configuration. Designed 
-        REST API integration and scalable backend services without managing servers.
-      </p>
-
-      <div class="project-stack">
-        <span class="stack-chip">Lambda</span>
-        <span class="stack-chip">API Gateway</span>
-        <span class="stack-chip">DynamoDB</span>
-        <span class="stack-chip">EC2</span>
-        <span class="stack-chip">Nginx</span>
-      </div>
-
-      <p style="font-size:0.75rem;color:#39ff8a;">✔ Fully Serverless Architecture</p>
-
-      <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application" target="_blank" class="project-link">
-        View on GitHub
-      </a>
-    </div>
-
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>
+      DevOps fresher with hands-on experience in AWS, Linux, Docker, and Jenkins.
+      Built real-world CI/CD pipelines and cloud infrastructure projects.
+    </p>
   </div>
 </section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>CI/CD Pipeline — Jenkins, Docker & AWS Automation</h3>
+    <p>
+      Automated build and deployment using Jenkins and Docker on AWS EC2.
+    </p>
+    <p style="color:#39ff8a;font-size:12px;">✔ Production-Level Project</p>
+    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">
+      View Project →
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>AWS High Availability Infrastructure</h3>
+    <p>
+      Built scalable architecture using VPC, EC2, Load Balancer, and Auto Scaling.
+    </p>
+    <p style="color:#39ff8a;font-size:12px;">✔ High Availability Setup</p>
+    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">
+      View Project →
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>AWS Serverless Quiz Application</h3>
+    <p>
+      Developed serverless app using Lambda, API Gateway, and DynamoDB.
+    </p>
+    <p style="color:#39ff8a;font-size:12px;">✔ Fully Serverless Architecture</p>
+    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">
+      View Project →
+    </a>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Email: shabinshareefa5018@gmail.com</p>
+    <p>
+      GitHub:
+      <a href="https://github.com/shabinshareefa5018">
+        github.com/shabinshareefa5018
+      </a>
+    </p>
+  </div>
+</section>
+
+<footer style="text-align:center;padding:20px;background:#111;">
+  Designed & Built by Shabin Shareefa · DevOps Engineer
+</footer>
+
+</body>
+</html>
