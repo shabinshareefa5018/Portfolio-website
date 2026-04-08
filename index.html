@@ -8,30 +8,60 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: #0a0f1e;
-  color: white;
+  color: #e8f0fe;
 }
 
-header {
-  text-align: center;
-  padding: 60px 20px;
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #111827;
+}
+nav a {
+  color: #00e5ff;
+  text-decoration: none;
+  margin-left: 20px;
 }
 
-h1 { font-size: 40px; }
-h2 { color: #00e5ff; }
+/* HERO */
+.hero {
+  padding: 80px 40px;
+}
+.hero h1 {
+  font-size: 48px;
+}
+.hero span {
+  color: #00e5ff;
+}
 
+/* SECTION */
 section {
-  padding: 40px;
-  max-width: 900px;
-  margin: auto;
+  padding: 60px 40px;
 }
 
-.projects a {
+/* CARDS */
+.card {
+  background: #141d2e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #00e5ff;
+}
+
+/* PROJECT */
+.project a {
   color: #00e5ff;
   text-decoration: none;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -42,59 +72,61 @@ footer {
 
 <body>
 
-<header>
-  <h1>Shabin Shareefa</h1>
-  <p>Cloud & DevOps Engineer (Fresher)</p>
-</header>
+<nav>
+  <div><b>Shabin</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section>
+<div class="hero">
+  <h1>Hi, I'm <span>Shabin Shareefa</span></h1>
+  <p>Cloud & DevOps Engineer | AWS | CI/CD | Docker</p>
+</div>
+
+<section id="about">
   <h2>About Me</h2>
-  <p>
-    I am a DevOps fresher with hands-on experience in AWS, Linux, Docker, and CI/CD pipelines.
-    I completed Cloud & DevOps training at IPSR and built real-world projects.
-  </p>
+  <div class="card">
+    <p>
+      DevOps fresher with hands-on experience in AWS, Linux, Docker, and Jenkins.
+      Built real-world CI/CD pipelines and cloud infrastructure projects.
+    </p>
+  </div>
 </section>
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>AWS (EC2, S3, IAM)</li>
-    <li>Linux</li>
-    <li>Docker</li>
-    <li>Jenkins</li>
-    <li>Git & GitHub</li>
-  </ul>
-</section>
-
-<section class="projects">
+<section id="projects">
   <h2>Projects</h2>
 
-  <p>
-    🔹 CI/CD Pipeline Project  
-    <br>
-    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project</a>
-  </p>
+  <div class="card project">
+    <h3>CI/CD Pipeline</h3>
+    <p>Automated deployment using Jenkins & Docker</p>
+    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project →</a>
+  </div>
 
-  <p>
-    🔹 AWS Cloud DevOps Project  
-    <br>
-    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project</a>
-  </p>
+  <div class="card project">
+    <h3>AWS DevOps Project</h3>
+    <p>Infrastructure with EC2, VPC, RDS</p>
+    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project →</a>
+  </div>
 
-  <p>
-    🔹 Serverless Quiz App  
-    <br>
-    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">View Project</a>
-  </p>
+  <div class="card project">
+    <h3>Serverless App</h3>
+    <p>Lambda, API Gateway, DynamoDB</p>
+    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">View Project →</a>
+  </div>
 
 </section>
 
-<section>
+<section id="contact">
   <h2>Contact</h2>
-  <p>Email: your@email.com</p>
-  <p>
-    GitHub: <a href="https://github.com/shabinshareefa5018">shabinshareefa5018</a>
-  </p>
+  <div class="card">
+    <p>Email: your@email.com</p>
+    <p>
+      GitHub: <a href="https://github.com/shabinshareefa5018">shabinshareefa5018</a>
+    </p>
+  </div>
 </section>
 
 <footer>
@@ -103,3 +135,7 @@ footer {
 
 </body>
 </html>
+
+
+
+
