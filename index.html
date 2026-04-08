@@ -3,159 +3,331 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shabin Shareefa — DevOps Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700&display=swap" rel="stylesheet"/>
-
+<title>Shabin Shareefa — Cloud & DevOps Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
-body {
-  margin:0;
-  font-family: 'Inter', sans-serif;
-  background:#0a0f1e;
-  color:#e8f0fe;
-}
+  :root {
+    --bg: #0a0f1e;
+    --surface: #111827;
+    --card: #141d2e;
+    --accent: #00e5ff;
+    --accent2: #7b61ff;
+    --accent3: #39ff8a;
+    --text: #e8f0fe;
+    --muted: #6b7a99;
+    --border: rgba(0,229,255,0.12);
+    --glow: 0 0 40px rgba(0,229,255,0.15);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; z-index: 0; }
 
-/* NAV */
-nav {
-  position:fixed;
-  width:100%;
-  background:#111827;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 40px;
-  z-index:100;
-}
-nav a { color:#00e5ff; text-decoration:none; margin-left:20px; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%; background: rgba(10,15,30,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+  .logo { font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--accent); letter-spacing: 2px; }
+  .logo span { color: var(--text); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 1.5px; text-transform: uppercase; font-family: 'Space Mono', monospace; transition: color 0.2s; }
+  nav a:hover { color: var(--accent); }
 
-/* HERO */
-.hero {
-  padding:120px 40px 60px;
-}
-.hero h1 {
-  font-size:48px;
-}
-.hero span { color:#00e5ff; }
+  #hero { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 8%; padding-top: 80px; }
+  .hero-tag { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards; }
+  .hero-tag::before { content: '> '; }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 800; line-height: 1; letter-spacing: -2px; opacity: 0; animation: fadeUp 0.6s ease 0.4s forwards; }
+  h1 .accent { color: var(--accent); }
+  h1 .dim { color: var(--muted); }
+  .hero-sub { margin-top: 1.5rem; font-size: 1.1rem; color: var(--muted); max-width: 540px; line-height: 1.7; opacity: 0; animation: fadeUp 0.6s ease 0.6s forwards; }
+  .hero-sub strong { color: var(--text); }
+  .hero-btns { margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s ease 0.8s forwards; }
+  .btn { padding: 0.75rem 1.8rem; border-radius: 4px; font-family: 'Space Mono', monospace; font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
+  .btn-primary { background: var(--accent); color: #000; border: none; font-weight: 700; }
+  .btn-primary:hover { background: #00b8cc; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,229,255,0.3); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 0.6s ease 1.2s forwards; }
+  .scroll-hint span { font-size: 0.65rem; letter-spacing: 2px; color: var(--muted); font-family: 'Space Mono', monospace; }
+  .scroll-line { width: 1px; height: 50px; background: linear-gradient(to bottom, var(--accent), transparent); animation: scrollPulse 1.5s ease-in-out infinite; }
 
-.btn {
-  display:inline-block;
-  margin-top:20px;
-  padding:10px 20px;
-  background:#00e5ff;
-  color:#000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:5px;
-}
+  section { position: relative; z-index: 1; padding: 7rem 8%; }
+  .section-label { font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 0.75rem; }
+  .section-label::before { content: '// '; }
+  h2 { font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; line-height: 1.1; }
+  .divider { width: 60px; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); margin-bottom: 3rem; }
 
-/* SECTION */
-section { padding:60px 40px; max-width:1000px; margin:auto; }
+  #about .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 1rem; line-height: 1.8; }
+  .about-text p strong { color: var(--text); }
+  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; text-align: center; transition: border-color 0.3s, box-shadow 0.3s; }
+  .stat-card:hover { border-color: var(--accent); box-shadow: var(--glow); }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 1px; margin-top: 0.4rem; font-family: 'Space Mono', monospace; }
 
-/* CARD */
-.card {
-  background:#141d2e;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:20px;
-  transition:0.3s;
-}
-.card:hover {
-  transform:translateY(-5px);
-  border:1px solid #00e5ff;
-}
+  #skills { background: linear-gradient(180deg, transparent, rgba(17,24,39,0.5), transparent); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .skill-category { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 1.8rem; transition: border-color 0.3s, transform 0.3s; }
+  .skill-category:hover { border-color: var(--accent2); transform: translateY(-4px); }
+  .cat-title { font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 2px; color: var(--accent2); text-transform: uppercase; margin-bottom: 1.2rem; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag { background: rgba(123,97,255,0.1); border: 1px solid rgba(123,97,255,0.25); color: var(--text); padding: 0.35rem 0.8rem; border-radius: 4px; font-size: 0.8rem; font-family: 'Space Mono', monospace; transition: all 0.2s; }
+  .tag:hover { background: rgba(123,97,255,0.3); border-color: var(--accent2); }
+  .tag.cloud { background: rgba(0,229,255,0.08); border-color: rgba(0,229,255,0.2); }
+  .tag.cloud:hover { background: rgba(0,229,255,0.2); border-color: var(--accent); }
+  .tag.green { background: rgba(57,255,138,0.08); border-color: rgba(57,255,138,0.2); }
+  .tag.green:hover { background: rgba(57,255,138,0.2); border-color: var(--accent3); }
 
-/* PROJECT */
-.project a {
-  color:#00e5ff;
-  text-decoration:none;
-}
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 2rem; display: flex; flex-direction: column; transition: all 0.3s; position: relative; overflow: hidden; }
+  .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-card:hover { transform: translateY(-6px); border-color: rgba(0,229,255,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .project-num { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 2px; margin-bottom: 0.75rem; }
+  .project-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text); }
+  .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; flex: 1; margin-bottom: 1.5rem; }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .stack-chip { background: rgba(0,229,255,0.08); border: 1px solid rgba(0,229,255,0.15); color: var(--accent); padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.72rem; font-family: 'Space Mono', monospace; }
+  .project-link { color: var(--muted); text-decoration: none; font-size: 0.78rem; font-family: 'Space Mono', monospace; letter-spacing: 1px; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+  .project-link:hover { color: var(--accent); }
+  .project-link::after { content: '→'; }
 
-/* FOOTER */
-footer {
-  text-align:center;
-  padding:20px;
-  background:#111;
-}
+  #certifications { background: linear-gradient(180deg, transparent, rgba(17,24,39,0.4), transparent); }
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+  .cert-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1rem; transition: all 0.3s; }
+  .cert-card:hover { border-color: var(--accent3); transform: translateY(-3px); }
+  .cert-icon { font-size: 1.8rem; min-width: 40px; text-align: center; }
+  .cert-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .cert-issuer { font-size: 0.78rem; color: var(--muted); font-family: 'Space Mono', monospace; }
+  .cert-badge { display: inline-block; margin-top: 0.5rem; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 3px; font-family: 'Space Mono', monospace; letter-spacing: 1px; }
+  .badge-completed { background: rgba(57,255,138,0.1); color: var(--accent3); border: 1px solid rgba(57,255,138,0.2); }
+  .badge-progress { background: rgba(0,229,255,0.1); color: var(--accent); border: 1px solid rgba(0,229,255,0.2); }
+
+  #contact { text-align: center; padding-bottom: 6rem; }
+  #contact p { color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  .contact-chip { display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border: 1px solid var(--border); border-radius: 100px; color: var(--muted); text-decoration: none; font-size: 0.8rem; font-family: 'Space Mono', monospace; transition: all 0.2s; }
+  .contact-chip:hover { border-color: var(--accent); color: var(--accent); background: rgba(0,229,255,0.05); }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); position: relative; z-index: 1; }
+  footer span { color: var(--accent); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    #about .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    section { padding: 5rem 6%; }
+    #hero { padding: 6rem 6% 4rem; }
+  }
 </style>
 </head>
-
 <body>
 
 <nav>
-  <div><b>Shabin</b></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <div class="logo">&lt;<span>Shabin</span>/&gt;</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Hi, I'm <span>Shabin Shareefa</span></h1>
-  <p>
-    DevOps Engineer fresher specializing in AWS infrastructure, CI/CD pipelines, 
-    and cloud automation.
+<section id="hero">
+  <div class="hero-tag">Cloud & DevOps Engineer</div>
+  <h1>Shabin<br/><span class="accent">Shareefa</span><br/><span class="dim">Builds.</span></h1>
+  <p class="hero-sub">
+    Cloud & DevOps fresher passionate about building reliable infrastructure,
+    automating pipelines, and deploying scalable AWS architectures.
+    Trained at <strong>IPSR Solutions, Calicut</strong> — actively building real-world projects.
   </p>
+  <div class="hero-btns">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="https://github.com/shabinshareefa5018" target="_blank" class="btn btn-ghost">GitHub Profile</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-  <a href="resume.pdf" class="btn">Download Resume</a>
-</div>
-
-<!-- ABOUT -->
 <section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I am a Cloud & DevOps Engineer fresher from Calicut with hands-on experience in AWS, Linux, Docker, and Jenkins.
-      I have built real-world projects including CI/CD pipelines and scalable cloud infrastructure.
-    </p>
+  <div class="reveal">
+    <div class="section-label">About</div>
+    <h2>Who I Am</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>I'm <strong>Shabin Shareefa</strong>, a Cloud & DevOps fresher based in <strong>Calicut, Kerala</strong>. I recently completed a professional Cloud & DevOps training program at <strong>IPSR Solutions</strong>.</p>
+      <p>I build and deploy cloud infrastructure on <strong>AWS</strong> using services like EC2, Lambda, API Gateway, VPC, ALB, Auto Scaling, and DynamoDB. I containerize applications with <strong>Docker</strong> and automate delivery with <strong>Jenkins CI/CD pipelines</strong>.</p>
+      <p>Currently open to <strong>fresher Cloud / DevOps Engineer roles</strong> where I can contribute, grow, and work alongside experienced engineers.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Projects Built</div></div>
+      <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">AWS Services</div></div>
+      <div class="stat-card"><div class="stat-num">3</div><div class="stat-label">Cloud Platforms</div></div>
+      <div class="stat-card"><div class="stat-num">∞</div><div class="stat-label">Curiosity</div></div>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">Skills</div>
+    <h2>My Toolkit</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category reveal">
+      <div class="cat-title">☁️ AWS Cloud</div>
+      <div class="skill-tags">
+        <span class="tag cloud">EC2</span><span class="tag cloud">S3</span><span class="tag cloud">Lambda</span><span class="tag cloud">API Gateway</span><span class="tag cloud">DynamoDB</span><span class="tag cloud">VPC</span><span class="tag cloud">IAM</span><span class="tag cloud">ALB</span><span class="tag cloud">Auto Scaling</span><span class="tag cloud">CloudWatch</span><span class="tag cloud">SNS</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <div class="cat-title">🐳 Containers & CI/CD</div>
+      <div class="skill-tags">
+        <span class="tag">Docker</span><span class="tag">Dockerfile</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD Pipelines</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <div class="cat-title">🐧 OS & Scripting</div>
+      <div class="skill-tags">
+        <span class="tag green">Linux (RHEL)</span><span class="tag green">Bash</span><span class="tag green">Python</span><span class="tag green">Git</span><span class="tag green">Nginx</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <div class="cat-title">☁️ Other Platforms</div>
+      <div class="skill-tags">
+        <span class="tag cloud">GCP</span><span class="tag cloud">TypeScript</span><span class="tag cloud">HTML/CSS</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <div class="cat-title">🔒 Networking & Security</div>
+      <div class="skill-tags">
+        <span class="tag">Server Hardening</span><span class="tag">VPC & Subnets</span><span class="tag">Security Groups</span><span class="tag">Load Balancing</span>
+      </div>
+    </div>
+    <div class="skill-category reveal">
+      <div class="cat-title">📊 Monitoring</div>
+      <div class="skill-tags">
+        <span class="tag cloud">CloudWatch</span><span class="tag cloud">SNS Alerts</span><span class="tag cloud">Lambda Auto-healing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="projects">
-  <h2>Projects</h2>
-
-  <div class="card project">
-    <h3>CI/CD Pipeline (Jenkins + Docker)</h3>
-    <p>Automated build and deployment using Jenkins and Docker on AWS EC2.</p>
-    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project →</a>
+  <div class="reveal">
+    <div class="section-label">Projects</div>
+    <h2>Things I've Built</h2>
+    <div class="divider"></div>
   </div>
+  <div class="projects-grid">
 
-  <div class="card project">
-    <h3>AWS Cloud Infrastructure</h3>
-    <p>Built high availability architecture with VPC, EC2, Load Balancer, and Auto Scaling.</p>
-    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project →</a>
+    <div class="project-card reveal">
+      <div class="project-num">01 / PROJECT</div>
+      <div class="project-title">AWS CloudCore DevOps — High Availability Infrastructure</div>
+      <p class="project-desc">Production-grade AWS infrastructure featuring VPC, Application Load Balancer, Auto Scaling Groups, EC2, CloudWatch monitoring, SNS alerts, and Lambda auto-healing. Built to stay online and self-recover automatically.</p>
+      <div class="project-stack">
+        <span class="stack-chip">AWS VPC</span><span class="stack-chip">ALB</span><span class="stack-chip">Auto Scaling</span><span class="stack-chip">EC2</span><span class="stack-chip">CloudWatch</span><span class="stack-chip">SNS</span><span class="stack-chip">Lambda</span>
+      </div>
+      <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">02 / PROJECT</div>
+      <div class="project-title">AWS Serverless Quiz Application</div>
+      <p class="project-desc">Cloud-based quiz app on AWS serverless architecture. Frontend hosted on EC2 with Nginx, backend powered by API Gateway, Lambda functions, and DynamoDB for data storage.</p>
+      <div class="project-stack">
+        <span class="stack-chip">EC2</span><span class="stack-chip">Nginx</span><span class="stack-chip">API Gateway</span><span class="stack-chip">Lambda</span><span class="stack-chip">DynamoDB</span><span class="stack-chip">HTML</span>
+      </div>
+      <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">03 / PROJECT</div>
+      <div class="project-title">CI/CD Pipeline — RHEL + Jenkins</div>
+      <p class="project-desc">Automated CI/CD pipeline on Red Hat Enterprise Linux using Jenkins and Docker. Code changes trigger automatic builds, containerization, and deployments without manual intervention.</p>
+      <div class="project-stack">
+        <span class="stack-chip">Jenkins</span><span class="stack-chip">Docker</span><span class="stack-chip">RHEL</span><span class="stack-chip">Dockerfile</span><span class="stack-chip">GitHub</span>
+      </div>
+      <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">04 / PROJECT</div>
+      <div class="project-title">Linux Server Hardening on GCP</div>
+      <p class="project-desc">Applied Linux security hardening best practices on a Google Cloud Platform VM — SSH lockdown, firewall rules, user privilege controls, and system-level hardening to reduce the attack surface.</p>
+      <div class="project-stack">
+        <span class="stack-chip">Linux</span><span class="stack-chip">GCP</span><span class="stack-chip">Bash</span><span class="stack-chip">SSH</span><span class="stack-chip">Firewall</span>
+      </div>
+      <a href="https://github.com/shabinshareefa5018/linux-server-hardening-gcp" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-num">05 / PROJECT</div>
+      <div class="project-title">Broto Assist Desk</div>
+      <p class="project-desc">A TypeScript-based assist desk application demonstrating backend logic, API design, and modern TypeScript development practices.</p>
+      <div class="project-stack">
+        <span class="stack-chip">TypeScript</span><span class="stack-chip">Node.js</span><span class="stack-chip">GitHub</span>
+      </div>
+      <a href="https://github.com/shabinshareefa5018/broto-assist-desk" target="_blank" class="project-link">View on GitHub</a>
+    </div>
+
   </div>
-
-  <div class="card project">
-    <h3>Serverless Quiz Application</h3>
-    <p>Built serverless app using Lambda, API Gateway, and DynamoDB.</p>
-    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">View Project →</a>
-  </div>
-
 </section>
 
-<!-- CONTACT -->
+<section id="certifications">
+  <div class="reveal">
+    <div class="section-label">Certifications</div>
+    <h2>Credentials</h2>
+    <div class="divider"></div>
+  </div>
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <div class="cert-icon">🏆</div>
+      <div><div class="cert-name">Cloud & DevOps Program</div><div class="cert-issuer">IPSR Solutions, Calicut</div><span class="cert-badge badge-completed">✓ COMPLETED</span></div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">☁️</div>
+      <div><div class="cert-name">AWS Cloud Practitioner</div><div class="cert-issuer">Amazon Web Services</div><span class="cert-badge badge-progress">⟳ IN PROGRESS</span></div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🐳</div>
+      <div><div class="cert-name">Docker & Containerization</div><div class="cert-issuer">IPSR Solutions</div><span class="cert-badge badge-completed">✓ COMPLETED</span></div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon">🐧</div>
+      <div><div class="cert-name">Linux Administration</div><div class="cert-issuer">IPSR Solutions</div><span class="cert-badge badge-completed">✓ COMPLETED</span></div>
+    </div>
+  </div>
+</section>
+
 <section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: shabinshareefa5018@gmail.com</p>
-    <p>
-      GitHub: 
-      <a href="https://github.com/shabinshareefa5018">
-        github.com/shabinshareefa5018
-      </a>
-    </p>
+  <div class="reveal">
+    <div class="section-label">Contact</div>
+    <h2>Let's <span style="color:var(--accent)">Connect</span></h2>
+    <div class="divider" style="margin: 1rem auto;"></div>
+    <p>I'm actively looking for Cloud & DevOps fresher roles. If you're hiring or want to collaborate, feel free to reach out!</p>
+    <a href="/cdn-cgi/l/email-protection#deadb6bfbcb7b0adb6bfacbbbbb8bfebeeefe69eb9b3bfb7b2f0bdb1b3" class="btn btn-primary">Say Hello →</a>
+    <div class="contact-links">
+      <a href="https://github.com/shabinshareefa5018" target="_blank" class="contact-chip">⚙ GitHub</a>
+      <a href="https://www.linkedin.com/in/shabinshareefa5018/" target="_blank" class="contact-chip">in LinkedIn</a>
+      <a href="/cdn-cgi/l/email-protection#87f4efe6e5eee9f4efe6f5e2e2e1e6b2b7b6bfc7e0eae6eeeba9e4e8ea" class="contact-chip">✉ Email</a>
+    </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Shabin Shareefa</p>
-</footer>
+<footer>Designed & Built by <span>Shabin Shareefa</span> · Cloud & DevOps Engineer · Calicut, Kerala</footer>
 
-</body>
-</html>
-
-
-
-
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setT
