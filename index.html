@@ -8,123 +8,131 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* 🔥 GLOBAL FIX */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin:0;
-  font-family:'Inter', sans-serif;
-  background:#0a0f1e;
-  color:#e8f0fe;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0a0f1e;
+  color: #e8f0fe;
+  overflow-x: hidden;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 15px;
 }
 
 /* NAV */
 nav {
-  position:fixed;
-  width:100%;
-  top:0;
-  display:flex;
-  justify-content:space-between;
-  padding:15px 20px;
-  background:#111827;
-  z-index:100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111827;
+  z-index: 100;
 }
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
 nav a {
-  color:#00e5ff;
-  text-decoration:none;
-  margin-left:15px;
+  color: #00e5ff;
+  text-decoration: none;
+  margin-left: 15px;
 }
 
 /* HERO */
 .hero {
-  padding:100px 20px 40px;
-  max-width:1100px;
-  margin:auto;
+  padding: 100px 0 40px;
 }
+
 .hero h1 {
-  font-size:42px;
+  font-size: 40px;
 }
+
 .hero span {
-  color:#00e5ff;
+  color: #00e5ff;
 }
 
 .btn {
-  display:inline-block;
-  margin-top:15px;
-  margin-right:10px;
-  padding:10px 20px;
-  background:#00e5ff;
-  color:#000;
-  text-decoration:none;
-  border-radius:5px;
-  font-weight:600;
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background: #00e5ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
 /* SECTION */
 section {
-  padding:50px 20px;
-  max-width:1100px;
-  margin:auto;
-  width:100%;
+  padding: 50px 0;
 }
 
 /* CARD */
 .card {
-  background:#141d2e;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:15px;
-  width:100%;
-  box-sizing:border-box;
-  transition:0.3s;
-}
-.card:hover {
-  transform:translateY(-5px);
-  border:1px solid #00e5ff;
+  background: #141d2e;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: 0.3s;
 }
 
-/* PROJECT */
-.project a {
-  color:#00e5ff;
-  text-decoration:none;
+.card:hover {
+  transform: translateY(-5px);
+  border: 1px solid #00e5ff;
+}
+
+/* LINKS FIX */
+a {
+  word-break: break-word;
 }
 
 /* FOOTER */
 footer {
-  text-align:center;
-  padding:20px;
-  background:#111;
-  margin-top:30px;
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  margin-top: 30px;
 }
 
 /* MOBILE */
-@media (max-width:768px) {
-  .hero {
-    padding:90px 15px 30px;
-  }
-
-  section {
-    padding:40px 15px;
-  }
-
-  nav {
-    padding:15px;
-  }
-
+@media (max-width: 768px) {
   .hero h1 {
-    font-size:30px;
+    font-size: 28px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <div><b>Shabin</b></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <div class="container nav-inner">
+    <div><b>Shabin</b></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
+
+<div class="container">
 
 <!-- HERO -->
 <div class="hero">
@@ -154,21 +162,21 @@ footer {
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="card project">
+  <div class="card">
     <h3>CI/CD Pipeline — Jenkins, Docker & AWS Automation</h3>
     <p>Automated build and deployment using Jenkins and Docker on AWS EC2.</p>
     <p style="color:#39ff8a;font-size:12px;">✔ Production-Level Project</p>
     <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project →</a>
   </div>
 
-  <div class="card project">
+  <div class="card">
     <h3>AWS High Availability Infrastructure</h3>
     <p>Built scalable architecture using VPC, EC2, Load Balancer, and Auto Scaling.</p>
     <p style="color:#39ff8a;font-size:12px;">✔ High Availability Setup</p>
     <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project →</a>
   </div>
 
-  <div class="card project">
+  <div class="card">
     <h3>AWS Serverless Quiz Application</h3>
     <p>Developed serverless app using Lambda, API Gateway, and DynamoDB.</p>
     <p style="color:#39ff8a;font-size:12px;">✔ Fully Serverless Architecture</p>
@@ -185,11 +193,13 @@ footer {
     <p>
       GitHub: 
       <a href="https://github.com/shabinshareefa5018">
-        github.com/shabinshareefa5018
+        https://github.com/shabinshareefa5018
       </a>
     </p>
   </div>
 </section>
+
+</div>
 
 <footer>
   Designed & Built by Shabin Shareefa · DevOps Engineer
