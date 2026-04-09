@@ -1,24 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Shabin Shareefa — Cloud & DevOps Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shabin Shareefa | DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#0a0f1e; --card:#141d2e; --accent:#00e5ff; --text:#e8f0fe; --muted:#6b7a99;
+body {
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#0a0f1e;
+  color:#e8f0fe;
 }
-body {margin:0;background:var(--bg);color:var(--text);font-family:Inter;}
-nav {position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:#111;}
-nav a {color:var(--accent);margin-left:15px;text-decoration:none;}
-section {padding:80px 40px;max-width:1000px;margin:auto;}
-.hero {padding-top:120px;}
-.btn {padding:10px 20px;background:var(--accent);color:#000;text-decoration:none;border-radius:5px;margin-right:10px;}
-.card {background:var(--card);padding:20px;border-radius:10px;margin-bottom:20px;}
-.card:hover {border:1px solid var(--accent);}
+
+/* NAV */
+nav {
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  padding:15px 20px;
+  background:#111827;
+  z-index:100;
+}
+nav a {
+  color:#00e5ff;
+  text-decoration:none;
+  margin-left:15px;
+}
+
+/* HERO */
+.hero {
+  padding:100px 20px 40px;
+  max-width:1100px;
+  margin:auto;
+}
+.hero h1 {
+  font-size:42px;
+}
+.hero span {
+  color:#00e5ff;
+}
+
+.btn {
+  display:inline-block;
+  margin-top:15px;
+  margin-right:10px;
+  padding:10px 20px;
+  background:#00e5ff;
+  color:#000;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:600;
+}
+
+/* SECTION */
+section {
+  padding:50px 20px;
+  max-width:1100px;
+  margin:auto;
+  width:100%;
+}
+
+/* CARD */
+.card {
+  background:#141d2e;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:15px;
+  width:100%;
+  box-sizing:border-box;
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  border:1px solid #00e5ff;
+}
+
+/* PROJECT */
+.project a {
+  color:#00e5ff;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:20px;
+  background:#111;
+  margin-top:30px;
+}
+
+/* MOBILE */
+@media (max-width:768px) {
+  .hero {
+    padding:90px 15px 30px;
+  }
+
+  section {
+    padding:40px 15px;
+  }
+
+  nav {
+    padding:15px;
+  }
+
+  .hero h1 {
+    font-size:30px;
+  }
+}
 </style>
 </head>
 
@@ -34,8 +127,8 @@ section {padding:80px 40px;max-width:1000px;margin:auto;}
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <h1>Hi, I'm <span style="color:#00e5ff;">Shabin Shareefa</span></h1>
+<div class="hero">
+  <h1>Hi, I'm <span>Shabin Shareefa</span></h1>
 
   <p>
     Cloud & DevOps Engineer fresher specializing in AWS infrastructure, 
@@ -44,7 +137,7 @@ section {padding:80px 40px;max-width:1000px;margin:auto;}
 
   <a href="resume.pdf" class="btn">Download Resume</a>
   <a href="https://linkedin.com/in/shabinshareefa" class="btn">LinkedIn</a>
-</section>
+</div>
 
 <!-- ABOUT -->
 <section id="about">
@@ -61,37 +154,25 @@ section {padding:80px 40px;max-width:1000px;margin:auto;}
 <section id="projects">
   <h2>Projects</h2>
 
-  <div class="card">
+  <div class="card project">
     <h3>CI/CD Pipeline — Jenkins, Docker & AWS Automation</h3>
-    <p>
-      Automated build and deployment using Jenkins and Docker on AWS EC2.
-    </p>
+    <p>Automated build and deployment using Jenkins and Docker on AWS EC2.</p>
     <p style="color:#39ff8a;font-size:12px;">✔ Production-Level Project</p>
-    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">
-      View Project →
-    </a>
+    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project →</a>
   </div>
 
-  <div class="card">
+  <div class="card project">
     <h3>AWS High Availability Infrastructure</h3>
-    <p>
-      Built scalable architecture using VPC, EC2, Load Balancer, and Auto Scaling.
-    </p>
+    <p>Built scalable architecture using VPC, EC2, Load Balancer, and Auto Scaling.</p>
     <p style="color:#39ff8a;font-size:12px;">✔ High Availability Setup</p>
-    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">
-      View Project →
-    </a>
+    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project →</a>
   </div>
 
-  <div class="card">
+  <div class="card project">
     <h3>AWS Serverless Quiz Application</h3>
-    <p>
-      Developed serverless app using Lambda, API Gateway, and DynamoDB.
-    </p>
+    <p>Developed serverless app using Lambda, API Gateway, and DynamoDB.</p>
     <p style="color:#39ff8a;font-size:12px;">✔ Fully Serverless Architecture</p>
-    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">
-      View Project →
-    </a>
+    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">View Project →</a>
   </div>
 
 </section>
@@ -102,7 +183,7 @@ section {padding:80px 40px;max-width:1000px;margin:auto;}
   <div class="card">
     <p>Email: shabinshareefa5018@gmail.com</p>
     <p>
-      GitHub:
+      GitHub: 
       <a href="https://github.com/shabinshareefa5018">
         github.com/shabinshareefa5018
       </a>
@@ -110,7 +191,7 @@ section {padding:80px 40px;max-width:1000px;margin:auto;}
   </div>
 </section>
 
-<footer style="text-align:center;padding:20px;background:#111;">
+<footer>
   Designed & Built by Shabin Shareefa · DevOps Engineer
 </footer>
 
