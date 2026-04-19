@@ -46,6 +46,7 @@ nav a {
   color: #00e5ff;
   text-decoration: none;
   margin-left: 20px;
+  font-size: 14px;
 }
 
 /* HERO */
@@ -56,7 +57,6 @@ nav a {
 
 .hero h1 {
   font-size: 42px;
-  animation: fadeIn 1s ease-in;
 }
 
 .hero span {
@@ -78,6 +78,7 @@ nav a {
   border-radius: 5px;
   text-decoration: none;
   transition: 0.3s;
+  font-weight: 600;
 }
 
 .btn:hover {
@@ -96,14 +97,7 @@ section {
   padding: 20px;
   border-radius: 12px;
   margin-bottom: 20px;
-  transition: 0.4s;
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
+  transition: 0.3s;
 }
 
 .card:hover {
@@ -111,17 +105,16 @@ section {
   border: 1px solid #00e5ff;
 }
 
+.card a {
+  color: #00e5ff;
+  text-decoration: none;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
   background: #111;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(-20px);}
-  to {opacity:1; transform:translateY(0);}
 }
 
 /* MOBILE */
@@ -152,9 +145,8 @@ footer {
 <!-- HERO -->
 <div class="hero">
   <h1>Hi, I'm <span>Shabin Shareefa</span></h1>
-  <p>Cloud & DevOps Engineer | AWS | Docker | CI/CD | Linux</p>
+  <p>DevOps Engineer | AWS | Docker | CI/CD | Linux</p>
 
-  <a href="#" class="btn">Download Resume</a>
   <a href="https://github.com/shabinshareefa5018" class="btn">GitHub</a>
   <a href="https://linkedin.com/in/shabinshareefa" class="btn">LinkedIn</a>
 </div>
@@ -164,9 +156,9 @@ footer {
   <h2>About Me</h2>
   <div class="card">
     <p>
-      DevOps Engineer fresher with hands-on experience in building CI/CD pipelines, 
-      containerized applications, and scalable AWS infrastructure. Passionate about 
-      automation, cloud technologies, and continuous learning.
+      DevOps Engineer fresher with hands-on experience in AWS cloud infrastructure,
+      CI/CD pipelines, and containerization. Built real-world projects using Jenkins,
+      Docker, and AWS services focusing on automation, scalability, and reliability.
     </p>
   </div>
 </section>
@@ -175,10 +167,10 @@ footer {
 <section id="skills">
   <h2>Skills</h2>
   <div class="card">
-    <p><b>Cloud:</b> AWS (EC2, VPC, S3, Auto Scaling)</p>
+    <p><b>Cloud:</b> AWS (EC2, VPC, Auto Scaling, S3)</p>
     <p><b>DevOps:</b> Docker, Jenkins, Git, CI/CD</p>
     <p><b>OS:</b> Linux (RHEL, Ubuntu)</p>
-    <p><b>Monitoring:</b> Learning Prometheus & Grafana</p>
+    <p><b>Monitoring:</b> CloudWatch</p>
   </div>
 </section>
 
@@ -186,64 +178,65 @@ footer {
 <section id="projects">
   <h2>Projects</h2>
 
-  <!-- CI/CD -->
   <div class="card">
     <h3>CI/CD Pipeline — Jenkins, Docker & AWS</h3>
     <p>
-      Designed and implemented an end-to-end CI/CD pipeline using Jenkins integrated 
-      with GitHub. Automated build, testing, and deployment of containerized 
-      applications using Docker on AWS EC2. Integrated SonarQube for code quality 
-      analysis and optimized deployment workflow.
+      Built a complete CI/CD pipeline using Jenkins integrated with GitHub.
+      Automated build, testing, and deployment using Docker on AWS EC2.
+      Integrated SonarCloud for code quality analysis.
     </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ Production-Level CI/CD</p>
+    <p style="color:#39ff8a;font-size:12px;">✔ CI/CD Automation</p>
     <p style="font-size:12px;color:#00e5ff;">
-      Tech: Jenkins, Docker, AWS EC2, GitHub, SonarQube
+      Tech: Jenkins, Docker, AWS EC2, GitHub, SonarCloud
     </p>
-    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project">View Project →</a>
+    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project" target="_blank">
+      View Project →
+    </a>
   </div>
 
-  <!-- AWS Infra -->
   <div class="card">
-    <h3>AWS High Availability Infrastructure</h3>
+    <h3>AWS Auto Scaling DevOps Project</h3>
     <p>
-      Built a highly available and fault-tolerant architecture using AWS services 
-      including VPC, EC2, Load Balancer, and Auto Scaling Groups. Designed secure 
-      networking with subnets and routing, ensuring scalability and high uptime.
+      Designed highly available infrastructure using EC2, Auto Scaling, and Load Balancer.
+      Implemented monitoring, health checks, and HTTPS security.
     </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ Scalable Architecture</p>
+    <p style="color:#39ff8a;font-size:12px;">✔ High Availability Setup</p>
     <p style="font-size:12px;color:#00e5ff;">
-      Tech: AWS VPC, EC2, ALB, Auto Scaling
+      Tech: AWS EC2, Auto Scaling, ALB, CloudWatch
     </p>
-    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project">View Project →</a>
+    <a href="https://github.com/shabinshareefa5018/aws-autoscaling-devops-project" target="_blank">
+      View Project →
+    </a>
   </div>
 
-  <!-- Serverless -->
+  <div class="card">
+    <h3>AWS CloudCore DevOps Project</h3>
+    <p>
+      Built secure AWS architecture using VPC, subnets, and routing.
+      Configured load balancing and monitoring with CloudWatch and SNS alerts.
+    </p>
+    <p style="color:#39ff8a;font-size:12px;">✔ Cloud Architecture</p>
+    <p style="font-size:12px;color:#00e5ff;">
+      Tech: AWS VPC, EC2, ALB, CloudWatch, SNS
+    </p>
+    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project" target="_blank">
+      View Project →
+    </a>
+  </div>
+
   <div class="card">
     <h3>AWS Serverless Quiz Application</h3>
     <p>
-      Developed a fully serverless web application using AWS Lambda, API Gateway, 
-      and DynamoDB. Implemented backend logic without servers, achieving cost-efficient 
-      and scalable architecture.
+      Developed serverless application using AWS Lambda, API Gateway, and DynamoDB.
+      Backend logic handled with Lambda for scalable architecture.
     </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ Serverless Application</p>
+    <p style="color:#39ff8a;font-size:12px;">✔ Serverless App</p>
     <p style="font-size:12px;color:#00e5ff;">
       Tech: AWS Lambda, API Gateway, DynamoDB
     </p>
-    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application">View Project →</a>
-  </div>
-
-  <!-- NEW PROJECT -->
-  <div class="card">
-    <h3>Container-Driven Multi-OS Virtual Lab</h3>
-    <p>
-      Designed a lightweight virtual lab using Docker containers to simulate multiple 
-      Linux environments (Kali Linux and RHEL-based systems) on a single host. 
-      Optimized resource usage and enabled multi-user access without virtual machines.
-    </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ Containerization Project</p>
-    <p style="font-size:12px;color:#00e5ff;">
-      Tech: Docker, Linux, Networking
-    </p>
+    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application" target="_blank">
+      View Project →
+    </a>
   </div>
 
 </section>
@@ -255,7 +248,7 @@ footer {
     <p>Email: shabinshareefa5018@gmail.com</p>
     <p>
       GitHub:
-      <a href="https://github.com/shabinshareefa5018">
+      <a href="https://github.com/shabinshareefa5018" target="_blank">
         github.com/shabinshareefa5018
       </a>
     </p>
@@ -265,22 +258,8 @@ footer {
 </div>
 
 <footer>
-  Built with ❤️ by Shabin Shareefa | DevOps Engineer
+  Built by Shabin Shareefa | DevOps Engineer
 </footer>
-
-<!-- SCROLL ANIMATION -->
-<script>
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if (top < window.innerHeight - 50) {
-      card.classList.add('show');
-    }
-  });
-});
-</script>
 
 </body>
 </html>
