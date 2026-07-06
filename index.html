@@ -1,251 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shabin Shareefa | DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<title>Shabin Shareefa | Azure Administrator | Cloud Trainer | DevOps Engineer</title>
+
+<meta name="description"
+content="Portfolio of Shabin Shareefa - Azure Administrator, Cloud Trainer, DevOps Engineer specializing in Azure, AWS, Windows Server, Linux, PowerShell and Cloud Automation.">
+
+<meta name="keywords"
+content="Azure Administrator, Cloud Engineer, DevOps Engineer, Windows Server, Azure, AWS, PowerShell, Cloud Trainer">
+
+<meta name="author" content="Shabin Shareefa">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg,#0a0f1e,#0f172a);
-  color: #e8f0fe;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px;
+body{
+
+font-family:'Inter',sans-serif;
+
+background:
+linear-gradient(135deg,#050816,#07101f,#08131f);
+
+color:#F8FAFC;
+
+overflow-x:hidden;
+
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  background: rgba(17,24,39,0.8);
-  backdrop-filter: blur(10px);
-  z-index: 100;
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
 }
 
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 0;
+/* ================= NAVIGATION ================= */
+
+nav{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+
+background:rgba(7,16,31,.80);
+
+backdrop-filter:blur(15px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
 }
 
-nav a {
-  color: #00e5ff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
+.nav-inner{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 0;
+
 }
 
-.hero {
-  padding: 120px 0 60px;
-  text-align: center;
+.logo{
+
+font-size:24px;
+font-weight:800;
+color:#38BDF8;
+
 }
 
-.hero h1 {
-  font-size: 42px;
+.nav-links a{
+
+color:white;
+text-decoration:none;
+
+margin-left:28px;
+
+font-size:15px;
+
+transition:.3s;
+
 }
 
-.hero span {
-  color: #00e5ff;
+.nav-links a:hover{
+
+color:#38BDF8;
+
 }
 
-.hero p {
-  max-width: 600px;
-  margin: 20px auto;
-  opacity: 0.8;
+/* ================= HERO ================= */
+
+.hero{
+
+padding-top:160px;
+padding-bottom:90px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:70px;
+
+flex-wrap:wrap;
+
 }
 
-.btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background: #00e5ff;
-  color: #000;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: 0.3s;
-  font-weight: 600;
+.hero-text{
+
+flex:1;
+
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  background: #00bcd4;
+.hero-text h3{
+
+font-size:18px;
+font-weight:500;
+
+color:#38BDF8;
+
+margin-bottom:15px;
+
 }
 
-section {
-  padding: 60px 0;
+.hero-text h1{
+
+font-size:62px;
+line-height:72px;
+
+margin-bottom:20px;
+
+font-weight:800;
+
 }
 
-.card {
-  background: #141d2e;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  transition: 0.3s;
+.hero-text span{
+
+color:#38BDF8;
+
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border: 1px solid #00e5ff;
+.hero-text p{
+
+font-size:18px;
+
+line-height:32px;
+
+color:#CBD5E1;
+
+max-width:650px;
+
+margin-bottom:35px;
+
 }
 
-.card a {
-  color: #00e5ff;
-  text-decoration: none;
+/* ================= BUTTONS ================= */
+
+.buttons{
+
+display:flex;
+
+gap:20px;
+
+flex-wrap:wrap;
+
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
+.btn{
+
+padding:14px 28px;
+
+border-radius:10px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:.35s;
+
 }
 
-@media(max-width:768px){
-  .hero h1 { font-size: 28px; }
+.primary{
+
+background:#38BDF8;
+
+color:#08131f;
+
+}
+
+.primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 35px rgba(56,189,248,.4);
+
+}
+
+.secondary{
+
+border:1px solid #38BDF8;
+
+color:#38BDF8;
+
+}
+
+.secondary:hover{
+
+background:#38BDF8;
+
+color:#08131f;
+
+}
+
+/* ================= PROFILE CARD ================= */
+
+.hero-card{
+
+width:350px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+padding:35px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.avatar{
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#38BDF8,#0EA5E9);
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:48px;
+
+font-weight:700;
+
+margin:auto;
+
+margin-bottom:20px;
+
+}
+
+.hero-card h2{
+
+margin-bottom:10px;
+
+}
+
+.hero-card p{
+
+color:#CBD5E1;
+
+line-height:28px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+background:#0F172A;
+
+color:#38BDF8;
+
+font-size:14px;
+
+}
+
+/* ================= STATS ================= */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-bottom:100px;
+
+}
+
+.stat{
+
+background:#0F172A;
+
+border-radius:18px;
+
+padding:30px;
+
+text-align:center;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+border-color:#38BDF8;
+
+}
+
+.stat h2{
+
+font-size:42px;
+
+color:#38BDF8;
+
+margin-bottom:8px;
+
+}
+
+.stat p{
+
+color:#CBD5E1;
+
+}
+
+/* ================= SECTION ================= */
+
+section{
+
+padding:80px 0;
+
+}
+
+.section-title{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+color:#94A3B8;
+
+margin-bottom:50px;
+
+line-height:30px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.hero-text h1{
+
+font-size:46px;
+line-height:55px;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.hero-card{
+
+width:100%;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-text h1{
+
+font-size:36px;
+line-height:45px;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
+<!-- Navigation -->
+
 <nav>
-  <div class="container nav-inner">
-    <div><b>Shabin</b></div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
+
+<div class="container nav-inner">
+
+<div class="logo">
+
+Shabin.
+
+</div>
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+
+<a href="#experience">Experience</a>
+
+<a href="#skills">Skills</a>
+
+<a href="#projects">Projects</a>
+
+<a href="#blog">Blog</a>
+
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
 </nav>
+
+<!-- Hero -->
 
 <div class="container">
 
-<div class="hero">
-  <h1>Hi, I'm <span>Shabin Shareefa</span></h1>
-  <p>DevOps Engineer | AWS | Docker | CI/CD | Linux</p>
+<section class="hero">
 
-  <a href="https://github.com/shabinshareefa5018" class="btn">GitHub</a>
-  <a href="https://linkedin.com/in/shabinshareefa" class="btn">LinkedIn</a>
-</div>
+<div class="hero-text">
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      DevOps Engineer fresher with hands-on experience in AWS cloud infrastructure,
-      CI/CD pipelines, and containerization. Built real-world projects using Jenkins,
-      Docker, and AWS services focusing on automation, scalability, and reliability.
-    </p>
-  </div>
-</section>
+<h3>Hello, I'm</h3>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="card">
-    <p><b>Cloud:</b> AWS (EC2, VPC, Auto Scaling, S3)</p>
-    <p><b>DevOps:</b> Docker, Jenkins, Git, CI/CD</p>
-    <p><b>OS:</b> Linux (RHEL, Ubuntu)</p>
-    <p><b>Monitoring:</b> CloudWatch</p>
-  </div>
-</section>
+<h1>
 
-<section id="projects">
-  <h2>Projects</h2>
+<span>Shabin Shareefa</span>
 
-  <div class="card">
-    <h3>CI/CD Pipeline — Jenkins, Docker & AWS</h3>
-    <p>
-      Built a complete CI/CD pipeline using Jenkins integrated with GitHub.
-      Automated build, testing, and deployment using Docker on AWS EC2.
-      Integrated SonarCloud for code quality analysis.
-    </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ CI/CD Automation</p>
-    <p style="font-size:12px;color:#00e5ff;">
-      Tech: Jenkins, Docker, AWS EC2, GitHub, SonarCloud
-    </p>
-    <a href="https://github.com/shabinshareefa5018/cicd-rhel-jenkins-project" target="_blank">
-      View Project →
-    </a>
-  </div>
+</h1>
 
-  <div class="card">
-    <h3>AWS Auto Scaling DevOps Project</h3>
-    <p>
-      Designed highly available infrastructure using EC2, Auto Scaling, and Load Balancer.
-      Implemented monitoring, health checks, and HTTPS security.
-    </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ High Availability Setup</p>
-    <p style="font-size:12px;color:#00e5ff;">
-      Tech: AWS EC2, Auto Scaling, ALB, CloudWatch
-    </p>
-    <a href="https://github.com/shabinshareefa5018/aws-autoscaling-devops-project" target="_blank">
-      View Project →
-    </a>
-  </div>
+<p>
 
-  <div class="card">
-    <h3>AWS CloudCore DevOps Project</h3>
-    <p>
-      Built secure AWS architecture using VPC, subnets, and routing.
-      Configured load balancing and monitoring with CloudWatch and SNS alerts.
-    </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ Cloud Architecture</p>
-    <p style="font-size:12px;color:#00e5ff;">
-      Tech: AWS VPC, EC2, ALB, CloudWatch, SNS
-    </p>
-    <a href="https://github.com/shabinshareefa5018/aws-cloudcore-devops-project" target="_blank">
-      View Project →
-    </a>
-  </div>
+Azure Administrator, Cloud Trainer, and DevOps Engineer passionate about building secure cloud infrastructure, automating deployments with PowerShell, and creating hands-on learning experiences through real-world Azure and AWS projects.
 
-  <div class="card">
-    <h3>AWS Serverless Quiz Application</h3>
-    <p>
-      Developed serverless application using AWS Lambda, API Gateway, and DynamoDB.
-      Backend logic handled with Lambda for scalable architecture.
-    </p>
-    <p style="color:#39ff8a;font-size:12px;">✔ Serverless App</p>
-    <p style="font-size:12px;color:#00e5ff;">
-      Tech: AWS Lambda, API Gateway, DynamoDB
-    </p>
-    <a href="https://github.com/shabinshareefa5018/AWS-Serverless-Quiz-Application" target="_blank">
-      View Project →
-    </a>
-  </div>
+</p>
 
-</section>
+<div class="buttons">
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: shabinshareefa5018@gmail.com</p>
-    <p>
-      GitHub:
-      <a href="https://github.com/shabinshareefa5018" target="_blank">
-        github.com/shabinshareefa5018
-      </a>
-    </p>
-  </div>
-</section>
+<a href="#projects" class="btn primary">
+
+View Projects
+
+</a>
+
+<a href="https://medium.com/@shabinshareefainfo" target="_blank" class="btn secondary">
+
+Medium Blog
+
+</a>
+
+<a href="https://github.com/shabinshareefa5018" target="_blank" class="btn secondary">
+
+GitHub
+
+</a>
+
+<a href="https://linkedin.com/in/shabinshareefa5018" target="_blank" class="btn secondary">
+
+LinkedIn
+
+</a>
 
 </div>
 
-<footer>
-  Built by Shabin Shareefa | DevOps Engineer
-</footer>
+</div>
 
-</body>
-</html>
+<div class="hero-card">
+
+<div class="avatar">
+
+SS
+
+</div>
+
+<h2>Azure Administrator</h2>
+
+<p>
+
+Cloud Trainer specializing in Microsoft Azure, Windows Server Administration, Linux, DevOps, and Cloud Automation.
+
+</p>
+
+<div class="badge">
+
+Open to Cloud Opportunities
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div class="stat">
+
+<h2>15+</h2>
+
+<p>Cloud Projects</p>
+
+</div>
+
+<div class="stat">
+
+<h2>50+</h2>
+
+<p>Students Trained</p>
+
+</div>
+
+<div class="stat">
+
+<h2>1+</h2>
+
+<p>Technical Blog</p>
+
+</div>
+
+<div class="stat">
+
+<h2>3+</h2>
+
+<p>Cloud Platforms</p>
+
+</div>
+
+</div>
